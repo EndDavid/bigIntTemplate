@@ -177,13 +177,13 @@ public:
                 s = s.substr(1);
             }
         }
-        /*
+        
         for (char c : s) {
             if (!std::isdigit(c)) {
                 throw std::invalid_argument("Invalid character in BigInt string");
             }
         }
-        */
+        
         value = s;
         normalize();
     }
@@ -325,7 +325,7 @@ BigInt operator/(BigInt lhs, const BigInt& rhs) {
 }
 
 BigInt operator%(BigInt lhs, const BigInt& rhs) {
-    if (rhs == BigInt(0)) { // 需要修改
+    if (rhs == BigInt(0)) {
         throw std::runtime_error("Modulo by zero");
     }
     BigInt result;
